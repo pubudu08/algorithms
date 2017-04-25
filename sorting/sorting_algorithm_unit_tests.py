@@ -1,11 +1,10 @@
 import unittest
 
-from sorting.sorting_algorithms import counting_sort, bubble_sort, radix_sort
+from sorting.sorting_algorithms import counting_sort, bubble_sort, radix_sort, insertion_sort
 
 
 class Test(unittest.TestCase):
     def test_counting_sort(self):
-
         counting_sort_list = [6, 4, 3, 2, 1, 4, 3, 6, 6, 2, 4, 3, 4]
         k = 6
         counting_sort(counting_sort_list, k)
@@ -26,3 +25,10 @@ class Test(unittest.TestCase):
         for i in range(1, len(radix_sort_list)):
             if radix_sort_list[i - 1] > radix_sort_list[i]:
                 self.fail("radix_sort method fails.")
+
+    def test_insertion_sort(self):
+        insertion_sort_list = [8, 5, 3, 1, 9, 6, 0, 7, 4, 2, 5]
+        insertion_sort(insertion_sort_list)
+        for i in range(1, len(insertion_sort_list)):
+            if insertion_sort_list[i - 1] > insertion_sort_list[i]:
+                self.fail("insertion_sort method fails.")
