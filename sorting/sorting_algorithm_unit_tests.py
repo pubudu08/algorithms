@@ -1,6 +1,7 @@
 import unittest
 
-from sorting.sorting_algorithms import counting_sort, bubble_sort, radix_sort, insertion_sort
+from sorting.sorting_algorithms import counting_sort, bubble_sort, radix_sort, insertion_sort, merge_sort,\
+    merge_sort_approach_two
 
 
 class Test(unittest.TestCase):
@@ -32,3 +33,17 @@ class Test(unittest.TestCase):
         for i in range(1, len(insertion_sort_list)):
             if insertion_sort_list[i - 1] > insertion_sort_list[i]:
                 self.fail("insertion_sort method fails.")
+
+    def test_merge_sort(self):
+        merge_sort_list = [8, 5, 3, 1, 9, 6, 0, 7, 4, 2, 5]
+        merge_sort(merge_sort_list)
+        for i in range(1, len(merge_sort_list)):
+            if merge_sort_list[i - 1] > merge_sort_list[i]:
+                self.fail("merge_sort method fails.")
+
+    def test_merge_sort_approach_two(self):
+        merge_sort_list = [8, 5, 3, 1, 9, 6, 0, 7, 4, 2, 5]
+        merge_sort_approach_two(merge_sort_list)
+        for i in range(1, len(merge_sort_list)):
+            if merge_sort_list[i - 1] > merge_sort_list[i]:
+                self.fail("merge_sort_approach_two method fails.")
