@@ -1,7 +1,7 @@
 import unittest
 
 from sorting.sorting_algorithms import counting_sort, bubble_sort, radix_sort, insertion_sort, merge_sort,\
-    merge_sort_approach_two, bucket_sort, selection_sort
+    merge_sort_approach_two, bucket_sort, selection_sort, quick_sort
 
 
 class Test(unittest.TestCase):
@@ -60,5 +60,12 @@ class Test(unittest.TestCase):
         selection_sort(selection_sort_list)
         for i in range(1, len(selection_sort_list)):
             if selection_sort_list[i - 1] > selection_sort_list[i]:
-                self.fail("bucket_sort method fails.")
+                self.fail("selection_sort method fails.")
+
+    def test_quick_sort(self):
+        quick_sort_list = [8, 5, 3, 1, 9, 6, 0, 7, 4, 2]
+        quick_sort(quick_sort_list)
+        for i in range(1, len(quick_sort_list)):
+            if quick_sort_list[i - 1] > quick_sort_list[i]:
+                self.fail("quick_sort method fails.")
 
