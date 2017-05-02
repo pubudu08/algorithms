@@ -1,7 +1,7 @@
 import unittest
 
 from sorting.sorting_algorithms import counting_sort, bubble_sort, radix_sort, insertion_sort, merge_sort,\
-    merge_sort_approach_two, bucket_sort, selection_sort, quick_sort, heap_sort
+    merge_sort_approach_two, bucket_sort, selection_sort, quick_sort, heap_sort, cycle_sort
 
 
 class Test(unittest.TestCase):
@@ -74,4 +74,11 @@ class Test(unittest.TestCase):
         heap_sort(heap_sort_list)
         for i in range(1, len(heap_sort_list)):
             if heap_sort_list[i - 1] > heap_sort_list[i]:
+                self.fail("quick_sort method fails.")
+
+    def test_cycle_sort(self):
+        cycle_sort_list = [0, 1, 2, 2, 2, 2, 1, 9, 3.5, 5, 8, 4, 7, 0, 6]
+        cycle_sort(cycle_sort_list)
+        for i in range(1, len(cycle_sort_list)):
+            if cycle_sort_list[i - 1] > cycle_sort_list[i]:
                 self.fail("quick_sort method fails.")
