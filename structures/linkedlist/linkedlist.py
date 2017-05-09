@@ -96,7 +96,7 @@ class LinkedList(object):
         result_node = None
 
         while current_node is not None:
-            next_node = current_node.next_node # tricky: note the next node
+            next_node = current_node.next_node  # tricky: note the next node
             # move the current node in to the result node
             current_node.next_node = result_node
             result_node = current_node
@@ -105,19 +105,63 @@ class LinkedList(object):
             current_node = next_node
         self.head = result_node
 
+    def merge_list(self, head_node_one, head_node_two):
+        if head_node_one is None:
+            return head_node_two
+        if head_node_two is None:
+            return head_node_one
+
+        # create dummy node to avoid additional checks in loop
+        s = t = Node(0)
+        while not (head_node_one is None and head_node_two is None):
+            if head_node_one.data < head_node_two.data:
+                # remember current low-node
+                current_low = head_node_one
+                # follow ->next
+                head_node_one = head_node_one.next_node
+            else:
+                current_low = head_node_two
+                head_node_two = head_node_two.next_node
+            # only mutate the node AFTER we have followed ->next
+            t.next_node = current_low
+            # and make sure we also advance the temp
+            t = t.next_node
+        t.next_node = head_node_one or head_node_two
+        # return tail of dummy node
+        return s.next_node
+
+
+
+
 
 linkedlist = LinkedList()
 linkedlist.insert_at_start(12)
 linkedlist.insert_at_start(23)
 linkedlist.insert_at_start(34)
-print(linkedlist.traverse_list())
-linkedlist.insert_at_end(45)
-#
-print(linkedlist.traverse_list())
-linkedlist.remove(34)
-print(linkedlist.traverse_list())
-linkedlist.remove(23)
-print(linkedlist.traverse_list())
 
-linkedlist.reverse_list()
-print(linkedlist.traverse_list())
+
+linkedlist2 = LinkedList()
+linkedlist.insert_at_start(56)
+linkedlist.insert_at_start(57)
+linkedlist.insert_at_start(79)
+
+# print(linkedlist.traverse_list())
+# linkedlist.insert_at_end(45)
+# #
+# print(linkedlist.traverse_list())
+# linkedlist.remove(34)
+# print(linkedlist.traverse_list())
+# linkedlist.remove(23)
+# print(linkedlist.traverse_list())
+
+# linkedlist.reverse_list()
+# print(linkedlist.traverse_list())
+
+print("LinkedList One: " + str(linkedlist.traverse_list()))
+print("LinkedList Two: " + str(linkedlist2.traverse_list()))
+
+linkedlist.merge_list(linkedlist.head, linkedlist2.head)
+print("Merged in to LinkedList one")
+
+print("LinkedList One: " + str(linkedlist.traverse_list()))
+print("LinkedList Two: " + str(linkedlist2.traverse_list()))
