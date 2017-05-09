@@ -91,6 +91,20 @@ class LinkedList(object):
             actual_node = actual_node.next_node
         return output + "None]"
 
+    def reverse_list(self):
+        current_node = self.head
+        result_node = None
+
+        while current_node is not None:
+            next_node = current_node.next_node # tricky: note the next node
+            # move the current node in to the result node
+            current_node.next_node = result_node
+            result_node = current_node
+
+            # Process the next node
+            current_node = next_node
+        self.head = result_node
+
 
 linkedlist = LinkedList()
 linkedlist.insert_at_start(12)
@@ -103,4 +117,7 @@ print(linkedlist.traverse_list())
 linkedlist.remove(34)
 print(linkedlist.traverse_list())
 linkedlist.remove(23)
+print(linkedlist.traverse_list())
+
+linkedlist.reverse_list()
 print(linkedlist.traverse_list())
