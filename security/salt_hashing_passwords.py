@@ -13,6 +13,10 @@ you can get slightly more efficient storage in your database by storing the salt
     See here for a fantastic explanation about password hashing in general.
     https://security.stackexchange.com/questions/211/how-to-securely-hash-passwords/31846#31846
 
+    resources
+    http://stackoverflow.com/questions/536584/non-random-salt-for-password-hashes/536756#536756
+
+
 """
 
 password = "test_password"
