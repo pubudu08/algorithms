@@ -1,0 +1,28 @@
+
+Simple Linear Regression
+    Y = b0 + b1 * X1
+        Y = Dependent var
+        X1 = Independent Var
+        b1 = Coefficient
+        b0 = Constant
+
+Multiple Linear Regression
+    Y = b0 + b1 * X1 + b2 * X2 + b3 * X3 ... + bn * Xn
+
+
+
+Salary data set:
+IV : R&D, Admin, Marketing , State
+DV: Profit
+How much did the company in a given financial year that iven financial year a company
+Problem: There is a venture capitalist fund wants to analyse these 50 companies over
+analyze data set and create a model that will tell that VC fund which type of companies it should
+ interested investing in, their main criteria is the profit.
+ model which will tell me about profit based on R&D, Admin, Marketing , State,
+ bear in mind the VC fund is not looking to invest in all 50 companies
+ VC wants to understand, for an instance, in NY or CA all other things held equal or
+ which companies perform better
+
+ What are the co-relations between IVs which influance on DV
+
+Y = b0 + b1 * X1 + b2 * X2 + b3 * X3
