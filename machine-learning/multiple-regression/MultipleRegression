@@ -25,4 +25,15 @@ analyze data set and create a model that will tell that VC fund which type of co
 
  What are the co-relations between IVs which influance on DV
 
-Y = b0 + b1 * X1 + b2 * X2 + b3 * X3
+
+So many columns in data streams nowadays, some of the columns are useless we have to throw away
+    1. Garbage in garbage out - If you throw in lots of stuff into your model then model will not be a good model,
+    it won't be reliable, it won't be doing it supposed to be doing
+    2. Explain the variables and understand the Math behind them but actually what it means that certain vars predicts
+     the behaviours of your dependent var and you will have to explain that your superiors,
+     if you have a thousand vars is not goinf to be practical to try and explain that.
+
+     You need to keep vars that actually predict something.
+
+Building a Multiple Regression Model refer to the PDF file
+
