@@ -1,4 +1,8 @@
 <div class="well">
   <!--> use of String interpolation -->
-  <p [ngStyle]="{backgroundColor: getColor()}" > Server with ID {{serverId}} is {{(getserverStatus())}}</p>
+  <!-- ngclass allows us to dynamicly add or remove css classes -->
+  <p
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{online: serverStatus === 'online'}">
+   {{'Server'}} with ID {{serverId}} is {{(getserverStatus())}}</p>
 </div>
