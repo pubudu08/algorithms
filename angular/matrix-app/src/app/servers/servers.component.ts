@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
   // selector:'.app-servers',
 
   // use html code directly as template
-  template: `
-  <app-server></app-server>
-  <app-server></app-server>`,
+  // template: `
+  // <app-server></app-server>
+  // <app-server></app-server>`,
   // defualt
-  // templateUrl: './servers.component.html',
+  templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
