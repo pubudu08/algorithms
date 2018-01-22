@@ -1,3 +1,4 @@
 <div class="well">
-  <p>Server is compiled successfully</p>
+  <!--> use of String interpolation -->
+  <p [ngStyle]="{backgroundColor: getColor()}" > Server with ID {{serverId}} is {{(getserverStatus())}}</p>
 </div>
