@@ -11,7 +11,9 @@ export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
     new Recipe('A Test Recipe','This is a test recipe',
     'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg')
-  ];
+  ,new Recipe('A Test Recipe','This is a test recipe',
+  'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg')
+];
   constructor() { }
 
   ngOnInit() {
