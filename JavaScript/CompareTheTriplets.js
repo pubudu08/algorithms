@@ -21,7 +21,15 @@ function readLine() {
 /////////////// ignore above this line ////////////////////
 
 function solve(a0, a1, a2, b0, b1, b2){
-    // Complete this function
+    // placeholder values of A and B
+    var pointsAlice = 0, pointsBob = 0;
+    // If ai > bi, then A is awarded 1 point.
+    pointsAlice = ((a0>b0)?1:0)+ ((a1>b1)?1:0)+ ((a2>b2)?1:0);
+    // If ai < bi, then B is awarded 1 point.
+    pointsBob = ((a0<b0)?1:0)+ ((a1<b1)?1:0)+ ((a2<b2)?1:0);
+    // If ai = bi, then A is awarded 0 point.
+    // print values
+    console.log(pointsAlice+" " +pointsBob);
 }
 
 function main() {
